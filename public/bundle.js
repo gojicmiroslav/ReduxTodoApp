@@ -109,15 +109,15 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _Home = __webpack_require__(243);
+	var _Home = __webpack_require__(241);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _About = __webpack_require__(241);
+	var _About = __webpack_require__(242);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Contact = __webpack_require__(242);
+	var _Contact = __webpack_require__(243);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
@@ -907,12 +907,18 @@
 	 * will remain to ensure logic does not differ in production.
 	 */
 
-	function invariant(condition, format, a, b, c, d, e, f) {
-	  if (process.env.NODE_ENV !== 'production') {
+	var validateFormat = function validateFormat(format) {};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  validateFormat = function validateFormat(format) {
 	    if (format === undefined) {
 	      throw new Error('invariant requires an error message argument');
 	    }
-	  }
+	  };
+	}
+
+	function invariant(condition, format, a, b, c, d, e, f) {
+	  validateFormat(format);
 
 	  if (!condition) {
 	    var error;
@@ -26563,7 +26569,7 @@
 							_react2.default.createElement(
 								'h4',
 								{ className: 'font-weight-bold' },
-								'ReactApp'
+								'ReduxApp'
 							)
 						),
 						_react2.default.createElement(
@@ -26617,6 +26623,32 @@
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Home = function Home(props) {
+		return _react2.default.createElement(
+			'h1',
+			null,
+			'Redux Starter'
+		);
+	};
+
+	exports.default = Home;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -26644,7 +26676,7 @@
 	exports.default = About;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26677,32 +26709,6 @@
 	};
 
 	exports.default = Contact;
-
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(7);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Home = function Home(props) {
-		return _react2.default.createElement(
-			'h1',
-			null,
-			'Home Page'
-		);
-	};
-
-	exports.default = Home;
 
 /***/ }
 /******/ ]);

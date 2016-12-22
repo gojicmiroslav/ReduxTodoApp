@@ -10,7 +10,7 @@ class Nav extends React.Component {
 		return (
 			<nav className="navbar navbar-static-top navbar-dark" style={{backgroundColor: "#465762"}}>
 	    		<ul className="nav navbar-nav">
-	    			<li className="navbar-brand"><h4 className="font-weight-bold">ReactApp</h4></li>
+	    			<li className="navbar-brand"><h4 className="font-weight-bold">ReduxApp</h4></li>
 	      			<li className="nav-item">
 	        			<IndexLink to="/" activeClassName="active" className="nav-link">Home</IndexLink>
 	      			</li>
